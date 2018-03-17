@@ -1,0 +1,25 @@
+server.port: 8081
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        input: 
+          group: grp
+          destination: <stream>
+          content-type: application/json
+        output:  
+          group: grp
+          destination: <stream>
+          content-type: application/json
+       
+
+cloud:
+  aws:
+    region:
+      static: us-east-1
+    credentials:
+      accessKey: <key>
+      secretKey: <secretKey>
+    kinesis:
+      endpoint: <endpoint>
